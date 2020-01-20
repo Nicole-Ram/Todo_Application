@@ -78,7 +78,8 @@ public class TodoController {
             ModelAndView results = new ModelAndView("add-edit");
 
             results.addAllObjects(model.asMap());
-
+            results.addObject("mode", "add");
+            results.addObject("modeTitle", "Create");
             return results;
 
         }
