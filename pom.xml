@@ -18,22 +18,9 @@
         <start-class>io.jumpco.demo.todo.TodoApplication</start-class>
     </properties>
 
+
+
     <dependencies>
-
-
-        <!-- webjar dependencies for bootstrap and jquery -->
-        <dependency>
-            <groupId>org.webjars.bower</groupId>
-            <artifactId>bootstrap</artifactId>
-            <version>3.0.3</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.webjars.bower</groupId>
-            <artifactId>jquery</artifactId>
-            <version>3.4.1</version>
-        </dependency>
-
 
         <dependency>
             <groupId>org.springframework.boot</groupId>

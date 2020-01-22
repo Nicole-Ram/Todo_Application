@@ -51,7 +51,7 @@ public class TodoController {
         return result;
     }
 
-    @PostMapping(params = "cancel", path = "/todo/add")
+   @PostMapping(params = "cancel", path = "/todo/add")
     public View cancelAdd() {
         return home();
     }
@@ -69,24 +69,19 @@ public class TodoController {
 
 
 
+
+
     @PostMapping("/todo/add")
-
     public ModelAndView create(@Valid @ModelAttribute Todo todo, BindingResult bindingResult, Model model) {
-
         if(bindingResult.hasErrors()){
-
             ModelAndView results = new ModelAndView("add-edit");
-
             results.addAllObjects(model.asMap());
             results.addObject("mode", "add");
             results.addObject("modeTitle", "Create");
             return results;
-
         }
-       todoService.create(todo);
-
-
-        return new ModelAndView("redirect/");
+        todoService.create(todo);
+        return new ModelAndView("redirect:/");
     }
 
 
@@ -106,6 +101,8 @@ public class TodoController {
     private RedirectView home() {
         return new RedirectView("/");
     }
+
+
 
     @GetMapping("/")
     public ModelAndView index() {
