@@ -4,16 +4,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="/css/style.css" rel="stylesheet" type="text/css"/>
     <title>Todo List</title>
-<script src="/webjars/jquery/3.1.1/jquery.min.js"></script>
-        <script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet"
-              href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="css/style.css"/>
+
+
 </head>
 <body>
-<mvc:resources mapping="/webjars/**" location="/webjars/"/>
+<div class="bg">
  <div class="container"><br/>
             <div class="alert alert-success">
 
@@ -56,7 +55,7 @@
 </table>
 </div>
 </div>
-
+</div>
 
 
 

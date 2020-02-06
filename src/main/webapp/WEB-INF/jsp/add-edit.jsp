@@ -1,23 +1,22 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="/css/style.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
     <title>${modeTitle} Todo</title>
 
-    <script src="/webjars/jquery/3.1.1/jquery.min.js"></script>
-            <script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet"
-                  href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" />
-    	<link rel = "stylesheet" type="text/css" href ="/css/style.css"/>
+
 </head>
 <body>
+<div class="bg">
 
-
-<div class="jumbotron">
-<h2>${modeTitle} Todo</h2>
-<form:form action="${pageContext.request.contextPath}/todo/${mode}" method="post" modelAttribute="todo">
+<h2 class="text-center">${modeTitle} Todo</h2>
+<div class="form-group">
+<form:form action="${pageContext.request.contextPath}/todo/${mode}" method="post" modelAttribute="todo" class="was-validated">
     <form:hidden path="id"/>
     <table>
         <tr>
@@ -25,7 +24,7 @@
                 <form:label path="title">Title</form:label>
             </td>
             <td>
-                <form:input path="title"></form:input>
+                <form:input path="title" class="form-control" placeholder="Enter Title"></form:input>
             </td>
             <td>
                 <form:errors path="title"></form:errors>
@@ -33,10 +32,13 @@
         </tr>
         <tr>
             <td>
-                <form:label path="description">Description</form:label>
+                <form:label path="description" for="validationTextarea">Description</form:label>
             </td>
             <td>
-                <form:textarea path="description" cols="40" rows="25"></form:textarea>
+                <form:textarea  path="description" cols="30" rows="20" class="form-control" placeholder="Enter Description" ></form:textarea>
+                <div class="invalid-feedback">
+                      Please enter a message in the textarea
+                    </div>
             </td>
             <td>
                 <form:errors path="description"></form:errors>
@@ -54,23 +56,15 @@
         </tr>
     </table>
 </form:form>
+</div>
+</div>
 
-
-
-
-	<script src="./js/validation.js"></script>
+<script src="./js/validation.js"></script>
 	<script
 		src="https://ajax.aspnetcdn.com/ajax/JQuery/jquery-2.1.3.min.js"></script>
 	<script
 		src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.1/jquery.validate.min.js"></script>
 
-
-
-
-
-
-
-
 </body>
-</div>
+
 </html>
