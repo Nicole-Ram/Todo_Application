@@ -13,51 +13,47 @@
 </head>
 <body>
 <div class="bg">
- <div class="container"><br/>
-            <div class="alert alert-success">
+ <div class="container" ><br/>
+<h2 style="align:center;">Todo Items</h2>
+        </div>
+<nav class="navbar navbar-dark bg-dark">
+
+
+  <a href="${pageContext.request.contextPath}/todo/create">New</a>
+
+</nav>
+<div class="alert alert-success">
 
                 <strong>Success!</strong> Welcome to the Todo Application.
-            </div>
-        </div>
+     </div>
 
-<div class="container">
-<div class="starter-template">
-<h2>Todo Items</h2>
-<a href="${pageContext.request.contextPath}/todo/create">New</a>
-<table class="table table-striped table-hover table-condensed table-bordered">
-
-
-
-<tr>
-     <th>Title</th>
-     <th>Completed</th>
-     <th>Action</th>
-    </tr>
-
-    <tbody>
-    <c:forEach var="todo" items="${todos}">
-    <tr>
-        <td>
-            ${todo.title}
-        </td>
-        <td>
-            ${todo.completed}
-        </td>
-        <td>
-            <a href="${pageContext.request.contextPath}/todo/edit/${todo.id}">Edit</a>
-            &nbsp;
-            <a href="${pageContext.request.contextPath}/todo/complete/${todo.id}">Complete</a>
-            &nbsp;
-            <a href="${pageContext.request.contextPath}/todo/delete/${todo.id}">Delete</a>
-        </td>
-    </tr>
-    </c:forEach>
-</table>
+<div class="container" style="margin:70px;">
+<div class="row" style="background-color:#ffffff;">
+  <div class="col">Title</div>
+  <div class="col">Completed</div>
+  <div class="col">Action</div>
 </div>
+
+<c:forEach var="todo" items="${todos}">
+<div class="row" style="background-color:#ffffff;">
+  <div class="col" >${todo.title}</div>
+  <div class="col">${todo.completed}</div>
+  <div class="col">
+
+  <a  class="btn-warning" href="${pageContext.request.contextPath}/todo/edit/${todo.id}">Edit</a>
+              &nbsp;
+              <a class="btn-primary" href="${pageContext.request.contextPath}/todo/complete/${todo.id}">Complete</a>
+              &nbsp;
+              <a  class="btn-danger" href="${pageContext.request.contextPath}/todo/delete/${todo.id}">Delete</a>
+
+  </div>
+  <hr>
+</div>
+</c:forEach>
 </div>
 </div>
 
-
-
+</div>
+</div>
 </body>
 </html>

@@ -1,33 +1,13 @@
-# Todo Application
+﻿# README
 
-## Requirements
 
-Java 8 or later installed.
-Docker or MySQL installed.
+## screenshots
 
-## Running
+- I have used the bootstrap grid system instead of the table
 
-### Start MySQL
+![](file:///C:\Users\User\Documents\todo-app\screenshot1.png)
+![](file:///C:\Users\User\Documents\todo-app\screenshot2.png)
 
-The docker-compose file in `src/main/docker/mysql.yml` provides a default database, user and password for the application to use.
-
-Linux:
-
-```bash
-./run-mysql.sh
-```
-Windows:
-```cmd
-run-mysql.cmd
-```
-
-### Build and Run Application
-```
-./mvnw package
-java -jar ./target/todo-0.0.1-SNAPSHOT.jar
-```
-
-OR launch from IDE
-
-Then visit http://localhost:8080
+![Todo List](todolist.png)
+![Create/Edt](create-edit.png)
 
