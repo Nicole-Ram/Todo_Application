@@ -3,11 +3,18 @@
 
 ## screenshots
 
-- I have used the bootstrap grid system instead of the table
+- The enum field displays output selected from the dropdown-list
 
-![](file:///C:\Users\User\Documents\todo-app\screenshot1.png)
-![](file:///C:\Users\User\Documents\todo-app\screenshot2.png)
+![](file:///C:\Users\User\Documents\todo-app\todo_1.png)
 
-![Todo List](todolist.png)
-![Create/Edt](create-edit.png)
+- dropdown-list with enum values
+
+![](file:///C:\Users\User\Documents\todo-app\todo_2.png)
+
+- enum fields stored in the database
+
+![](file:///C:\Users\User\Documents\todo-app\database.png)
+
+
+
 
