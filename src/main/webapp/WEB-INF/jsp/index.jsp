@@ -32,6 +32,7 @@
   <div class="col">Title</div>
   <div class="col">Completed</div>
   <div class="col">Action</div>
+  <div class="col">Type</div>
 </div>
 
 <c:forEach var="todo" items="${todos}">
@@ -47,6 +48,7 @@
               <a  class="btn-danger" href="${pageContext.request.contextPath}/todo/delete/${todo.id}">Delete</a>
 
   </div>
+  <div class="col">${todo.type.name}</div>
   <hr>
 </div>
 </c:forEach>

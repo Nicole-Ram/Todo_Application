@@ -1,10 +1,6 @@
 package io.jumpco.demo.todo.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.StringJoiner;
@@ -28,6 +24,9 @@ public class Todo {
     @Column(name = "order_i")
     @NotNull
     private int order;
+
+    @Enumerated(EnumType.STRING)
+    private Feats type;
 
     public Long getId() {
         return id;
@@ -67,6 +66,14 @@ public class Todo {
 
     public void setOrder(Integer order) {
         this.order = order;
+    }
+
+    public Feats getType() {
+        return type;
+    }
+
+    public void setType(Feats type) {
+        this.type = type;
     }
 
     @Override

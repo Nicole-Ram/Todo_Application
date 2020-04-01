@@ -1,9 +1,9 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
     <link href="/css/style.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
@@ -16,19 +16,19 @@
 
 <h2 class="text-center">${modeTitle} Todo</h2>
 <div class="form-group">
-<form:form action="${pageContext.request.contextPath}/todo/${mode}" method="post" modelAttribute="todo" class="was-validated">
+<form:form action="${pageContext.request.contextPath}/todo/${mode}" method="post"  modelAttribute="todo" class="was-validated" object="${Todo}">
     <form:hidden path="id"/>
     <table>
         <tr>
-            <td>
-                <form:label path="title">Title</form:label>
-            </td>
-            <td>
-                <form:input path="title" class="form-control" placeholder="Enter Title"></form:input>
-            </td>
-            <td>
-                <form:errors path="title"></form:errors>
-            </td>
+                             <td>
+                                 <form:label path="title">Title</form:label>
+                             </td>
+                             <td>
+                                 <form:input path="title" class="form-control" placeholder="Enter Title"></form:input>
+                             </td>
+                             <td>
+                                 <form:errors path="title"></form:errors>
+                             </td>
         </tr>
         <tr>
             <td>
@@ -44,6 +44,22 @@
                 <form:errors path="description"></form:errors>
             </td>
         </tr>
+
+
+ <tr>
+                             <td>
+                                 <form:label path="type">Type</form:label>
+                             </td>
+                             <td>
+                                 <form:select path="type">
+                                 <form:options for=" feat : ${feats}" text="feat.name" value="${feats}"></form:options>
+                                 </form:select>
+                             </td>
+                             <td>
+                                 <form:errors path="type"></form:errors>
+                             </td>
+        </tr>
+
         <tr>
             <td>
                 <label>Actions</label>
@@ -54,6 +70,7 @@
                 <input type="submit" name="submit" class ="btn-primary" value="Submit">
             </td>
         </tr>
+
     </table>
 </form:form>
 </div>
