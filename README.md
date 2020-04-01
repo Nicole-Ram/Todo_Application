@@ -12,7 +12,7 @@
 
 ![](todo_2.PNG)
 
-- enum fields stored in the database
+- enum fields stored in the database 
 
 ![](database.PNG)
 
